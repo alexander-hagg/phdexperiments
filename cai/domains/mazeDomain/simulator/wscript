@@ -1,0 +1,70 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+import sys
+import os
+sys.path.insert(0, './libfastsim/')
+
+VERSION='0.0.1'
+APPNAME='fastsim-standalone'
+srcdir = '.'
+blddir = 'build'
+
+
+
+def options(opt):
+    opt.load('compiler_cxx boost waf_unit_test')
+    opt.load('compiler_c')
+    opt.load('sdl')
+    opt.load('eigen')
+
+def configure(conf):
+    print("configuring b-optimize")
+    conf.env.append_value('INCLUDES', os.path.abspath(os.path.join("/usr/local/stella/eigen3", ".")))
+    conf.load('compiler_cxx boost waf_unit_test')
+    conf.load('compiler_c')
+    conf.load('sdl')
+    conf.check_sdl()
+    conf.load('eigen')
+    conf.check_eigen()
+
+    common_flags = "-Wall"
+
+    cxxflags = conf.env['CXXFLAGS']
+    opt_flags = common_flags + ' -O3 -msse2 -ggdb3 -g -DEIGEN3_ENABLED'
+    conf.env['CXXFLAGS'] = cxxflags + opt_flags.split(' ')
+    print(conf.env['CXXFLAGS'])
+
+def build(bld):
+    fastsim_src = "libfastsim/src/display.cpp \
+                   libfastsim/src/laser.cpp \
+                   libfastsim/src/map.cpp \
+                   libfastsim/src/radar.cpp \
+                   libfastsim/src/light_sensor.cpp \
+                   libfastsim/src/robot.cpp \
+                   libfastsim/src/linear_camera.cpp \
+                   libfastsim/src/settings.cpp"
+    tgt = bld.stlib(features = 'cxx',
+                    source = fastsim_src,
+                    target = 'fastsim',
+                    includes = 'libfastsim/src',
+                    uselib = 'BOOST SDL',
+                    use = '')
+    tgt = bld.program(features = 'cxx',
+                    source = 'src/main.cpp',
+                    target = 'fastsim-standalone',
+                    includes = '. libfastsim/src nn2',
+                    uselib = 'BOOST SDL EIGEN',
+                    use = 'fastsim')
+    tgt = bld.program(features = 'cxx',
+                    source = 'src/main_customBots.cpp',
+                    target = 'fastsim-custom',
+                    includes = '. libfastsim/src nn2',
+                    uselib = 'BOOST SDL EIGEN',
+                    use = 'fastsim')    
+    tgt = bld.program(features = 'cxx',
+                    source = 'src/main_customBots_rnn.cpp',
+                    target = 'fastsim-custom-rnn',
+                    includes = '. libfastsim/src nn2',
+                    uselib = 'BOOST SDL EIGEN stdio',
+                    use = 'fastsim')        

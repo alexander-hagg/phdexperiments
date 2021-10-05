@@ -1,0 +1,32 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 2.4.0-dcea1e13ff76
+Exec   : reconstructPar -latestTime
+Date   : Mar 20 2018
+Time   : 18:36:06
+Host   : "deepblack"
+PID    : 30532
+Case   : /home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+
+--> FOAM FATAL ERROR: 
+No times selected
+
+    From function reconstructPar
+    in file reconstructPar.C at line 210.
+
+FOAM exiting
+

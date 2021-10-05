@@ -1,0 +1,29 @@
+Preparing mesh for OpenFOAM
+
+
+1. remove all holes. There are online tools for that (3D printing companies)
+2. Use AutoDesk Netfabb to remesh uniformly (academic license is free)
+3. Make sure to center the mesh around the XY origin! Snappyhexmesh expects it to be in the center of the wind tunnel
+
+4. Change settngs to Snappyhexmesh. Ignore the refinemesh and instead grow the mesh out from the mirror surface. Set the final layer thickness
+
+    refinementRegions
+    {
+        carMirror
+        {
+            mode distance;
+            levels ( (0.03 7) (0.1 5) (0.3 4) (2.0 2)); // levels must be ordered nearest first 
+        }
+    }
+
+
+    // Wanted thickness of final added cell layer. If multiple layers
+    // is the thickness of the layer furthest away from the wall.
+    // Relative to undistorted size of cell outside layer.
+    // See relativeSizes parameter.
+    finalLayerThickness 0.03;
+
+    // Minimum thickness of cell layer. If for any reason layer
+    // cannot be above minThickness do not add layer.
+    // Relative to undistorted size of cell outside layer.
+    minThickness 0.03;    

@@ -1,0 +1,131 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+11
+(
+    frontAndBack
+    {
+        type            patch;
+        nFaces          407;
+        startFace       9004811;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          72;
+        startFace       9005218;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          72;
+        startFace       9005290;
+    }
+    lowerWall
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          13249;
+        startFace       9005362;
+    }
+    upperWall
+    {
+        type            patch;
+        nFaces          160;
+        startFace       9018611;
+    }
+    carBody
+    {
+        type            wall;
+        inGroups        
+2
+(
+carGroup
+wall
+)
+;
+        nFaces          309023;
+        startFace       9018771;
+    }
+    carTop_windows
+    {
+        type            wall;
+        inGroups        
+2
+(
+carGroup
+wall
+)
+;
+        nFaces          50961;
+        startFace       9327794;
+    }
+    carTop_Body
+    {
+        type            wall;
+        inGroups        
+2
+(
+carGroup
+wall
+)
+;
+        nFaces          150408;
+        startFace       9378755;
+    }
+    carMirror_Body
+    {
+        type            wall;
+        inGroups        
+2
+(
+carGroup
+wall
+)
+;
+        nFaces          334;
+        startFace       9529163;
+    }
+    carMirror_Mirrors
+    {
+        type            wall;
+        inGroups        
+2
+(
+carGroup
+wall
+)
+;
+        nFaces          25589;
+        startFace       9529497;
+    }
+    carMirrorCover
+    {
+        type            wall;
+        inGroups        
+2
+(
+carGroup
+wall
+)
+;
+        nFaces          0;
+        startFace       9555086;
+    }
+)
+
+// ************************************************************************* //

@@ -1,0 +1,83 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 2.4.0-dcea1e13ff76
+Exec   : surfaceFeatureExtract
+Date   : Mar 20 2018
+Time   : 18:35:43
+Host   : "deepblack"
+PID    : 30369
+Case   : /home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Reading surfaceFeatureExtractDict
+
+Surface            : "part_07_Mirror.stl"
+
+
+Feature line extraction is only valid on closed manifold surfaces.
+Statistics:
+Triangles    : 37121
+Vertices     : 18897
+Bounding Box : (744.963 -1014.99 606.486) (1001.91 1014.99 780.202)
+
+
+Constructing feature set from included angle 150
+Selecting edges purely based on geometric tests: no
+Removing all non-manifold edges (edges with > 2 connected faces) unless they cross multiple regions
+
+Initial feature set:
+    feature points : 29
+    feature edges  : 3502
+    of which
+        region edges   : 957
+        external edges : 2298
+        internal edges : 247
+
+
+Final feature set:
+    points : 3560
+    of which
+        convex             : 10
+        concave            : 0
+        mixed              : 19
+        non-feature        : 3531
+    edges  : 3502
+    of which
+        external edges     : 2298
+        internal edges     : 535
+        flat edges         : 0
+        open edges         : 669
+        multiply connected : 0
+
+Writing extendedFeatureEdgeMesh to "/home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only/constant/extendedFeatureEdgeMesh/part_07_Mirror.extendedFeatureEdgeMesh"
+
+Writing extendedEdgeMesh components to "/home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only/constant/extendedFeatureEdgeMesh/part_07_Mirror"
+Writing convex feature points to "/home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only/constant/extendedFeatureEdgeMesh/part_07_Mirror_convexFeaturePts.obj"
+Writing concave feature points to "/home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only/constant/extendedFeatureEdgeMesh/part_07_Mirror_concaveFeaturePts.obj"
+Writing mixed feature points to "/home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only/constant/extendedFeatureEdgeMesh/part_07_Mirror_mixedFeaturePts.obj"
+Writing mixed feature point structure to "/home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only/constant/extendedFeatureEdgeMesh/part_07_Mirror_mixedFeaturePtsStructure.obj"
+Writing external edges to "/home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only/constant/extendedFeatureEdgeMesh/part_07_Mirror_externalEdges.obj"
+Writing internal edges to "/home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only/constant/extendedFeatureEdgeMesh/part_07_Mirror_internalEdges.obj"
+Writing flat edges to "/home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only/constant/extendedFeatureEdgeMesh/part_07_Mirror_flatEdges.obj"
+Writing open edges to "/home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only/constant/extendedFeatureEdgeMesh/part_07_Mirror_openEdges.obj"
+Writing multiple edges to "/home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only/constant/extendedFeatureEdgeMesh/part_07_Mirror_multipleEdges.obj"
+Writing region edges to "/home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only/constant/extendedFeatureEdgeMesh/part_07_Mirror_regionEdges.obj"
+Writing edge directions to "/home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only/constant/extendedFeatureEdgeMesh/part_07_Mirror_edgeDirections.obj"
+
+Writing featureEdgeMesh to "/home/alex/Documents/phd/repositories/experiments/modules/prodigi/ffdSail/domains/mirror/pe/ofTemplates/local_mirror_only/constant/triSurface/part_07_Mirror.eMesh"
+
+ExecutionTime = 0.2 s  ClockTime = 0 s
+
+End
+

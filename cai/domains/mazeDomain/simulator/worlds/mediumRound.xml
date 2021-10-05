@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<fastsim>
+<display enable="false"/>
+<map name="domains/mazeDomain/simulator/worlds/mediumRound.pbm" size="400"/>
+<robot x="200" y="200" theta="-60" diameter="4"/>
+<goal x="200" y="200" color="0" diameter="5"/>
+<laser range="100" angle="45"/>
+<laser range="100" angle="-45"/>
+<laser range="100" angle="0.0"/>
+<radar slices="4" color="0" through_walls="false"/>
+</fastsim>
